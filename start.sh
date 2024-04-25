@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+WAZUH_AGENT_NAME=gwsalerts-1
+CONTAINER_NAME=$WAZUH_AGENT_NAME
+
+docker run -d --rm \
+	--name $CONTAINER_NAME \
+	-e GOOGLE_CUSTOMER_ID=$GOOGLE_CUSTOMER_ID \
+	-e GOOGLE_JSON_KEY=$GOOGLE_JSON_KEY \
+	-e GOOGLE_CUSTOMER_ID=$GOOGLE_CUSTOMER_ID \
+	-e ENROLLMENT_DELAY=20 \
+	quashprj/soc-gws-events:latest
